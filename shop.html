@@ -3,48 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Shop | Q's Urban Threads</title>
-
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
+<header>
+    <nav class="navbar">
+        <a href="./index.html" class="logo">Q's URBAN THREADS</a>
+        <div class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./shop.html">Shop</a>
+            <a href="./cart.html">Cart <span id="cart-count">0</span></a>
+            <span id="user-area"><a href="./login.html">Login</a></span>
+        </div>
+    </nav>
+</header>
 
-    <header>
-        <nav class="navbar">
+<main class="shop-page">
+    <section class="shop-header">
+        <p class="eyebrow">THE COLLECTION</p>
+        <h1>Shop Urban Threads</h1>
+        <p>Every product below is loaded dynamically from Firebase Firestore.</p>
+    </section>
 
-            <a href="index.html" class="logo">
-                Q's URBAN THREADS
-            </a>
+    <section class="shop-controls">
+        <input id="search-input" type="search" placeholder="Search products..." aria-label="Search products">
+        <select id="category-filter" aria-label="Filter by category">
+            <option value="All">All categories</option>
+            <option value="Hoodies">Hoodies</option>
+            <option value="T-Shirts">T-Shirts</option>
+            <option value="Sneakers">Sneakers</option>
+            <option value="Accessories">Accessories</option>
+        </select>
+    </section>
 
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="login.html">Login</a>
-                <a href="cart.html">Cart</a>
-            </div>
+    <p id="shop-message" class="status-message" aria-live="polite">Loading products...</p>
+    <div id="product-grid" class="product-grid"></div>
+</main>
 
-        </nav>
-    </header>
-
-    <main>
-
-        <section class="categories">
-
-            <h1>Shop Urban Threads</h1>
-
-            <p>
-                Our products will appear here from Firebase Firestore.
-            </p>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Q's Urban Threads. All rights reserved.</p>
-    </footer>
-
+<footer><p>&copy; 2026 Q's URBAN THREADS. All rights reserved.</p></footer>
+<script type="module" src="./js/products.js"></script>
 </body>
 </html>

@@ -1,174 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Login | Q's Urban Threads</title>
-
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
+<header>
+    <nav class="navbar">
+        <a href="./index.html" class="logo">Q's URBAN THREADS</a>
+        <div class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./shop.html">Shop</a>
+            <a href="./cart.html">Cart <span id="cart-count">0</span></a>
+            <span id="user-area"><a href="./login.html">Login</a></span>
+        </div>
+    </nav>
+</header>
 
-    <header>
+<main>
+<section class="auth-section">
+<div class="auth-container">
+    <div class="auth-header">
+        <p class="eyebrow">WELCOME TO URBAN THREADS</p>
+        <h1>Join the movement.</h1>
+        <p>Create an account or log in to continue shopping.</p>
+    </div>
 
-        <nav class="navbar">
+    <div class="auth-form">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" placeholder="you@example.com" required>
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Enter your password" required>
+            <button type="submit" class="btn btn-dark">Login</button>
+        </form>
+        <p id="login-message" class="form-message" aria-live="polite"></p>
+    </div>
 
-            <a href="index.html" class="logo">
-                Q's URBAN THREADS
-            </a>
+    <div class="auth-form">
+        <h2>Create Account</h2>
+        <form id="signup-form">
+            <label for="signup-name">Name</label>
+            <input type="text" id="signup-name" placeholder="Your name" required>
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" placeholder="you@example.com" required>
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" placeholder="At least 6 characters" minlength="6" required>
+            <button type="submit" class="btn btn-dark">Create Account</button>
+        </form>
+        <p id="signup-message" class="form-message" aria-live="polite"></p>
+    </div>
+</div>
+</section>
+</main>
 
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="login.html">Login</a>
-                <a href="cart.html">Cart</a>
-            </div>
-
-        </nav>
-
-    </header>
-
-
-    <main>
-
-        <section class="auth-section">
-
-            <div class="auth-container">
-
-                <div class="auth-header">
-
-                    <p class="eyebrow">
-                        WELCOME TO URBAN THREADS
-                    </p>
-
-                    <h1>Join the movement.</h1>
-
-                    <p>
-                        Create an account or log in to continue shopping.
-                    </p>
-
-                </div>
-
-
-                <!-- LOGIN -->
-
-                <div class="auth-form">
-
-                    <h2>Login</h2>
-
-                    <form id="login-form">
-
-                        <label for="login-email">
-                            Email
-                        </label>
-
-                        <input
-                            type="email"
-                            id="login-email"
-                            placeholder="you@example.com"
-                            required
-                        >
-
-
-                        <label for="login-password">
-                            Password
-                        </label>
-
-                        <input
-                            type="password"
-                            id="login-password"
-                            placeholder="Enter your password"
-                            required
-                        >
-
-
-                        <button type="submit" class="btn">
-                            Login
-                        </button>
-
-                    </form>
-
-                    <p id="login-message"></p>
-
-                </div>
-
-
-                <!-- SIGN UP -->
-
-                <div class="auth-form">
-
-                    <h2>Create Account</h2>
-
-                    <form id="signup-form">
-
-                        <label for="signup-name">
-                            Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="signup-name"
-                            placeholder="Your name"
-                            required
-                        >
-
-
-                        <label for="signup-email">
-                            Email
-                        </label>
-
-                        <input
-                            type="email"
-                            id="signup-email"
-                            placeholder="you@example.com"
-                            required
-                        >
-
-
-                        <label for="signup-password">
-                            Password
-                        </label>
-
-                        <input
-                            type="password"
-                            id="signup-password"
-                            placeholder="Create a password"
-                            minlength="6"
-                            required
-                        >
-
-
-                        <button type="submit" class="btn">
-                            Create Account
-                        </button>
-
-                    </form>
-
-                    <p id="signup-message"></p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-
-        <p>
-            &copy; 2026 Q's URBAN THREADS. All rights reserved.
-        </p>
-
-    </footer>
-
-
-    <script type="module" src="js/auth.js"></script>
-
+<footer><p>&copy; 2026 Q's URBAN THREADS. All rights reserved.</p></footer>
+<script type="module" src="./js/auth.js"></script>
 </body>
-
 </html>

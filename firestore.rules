@@ -1,0 +1,28 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Products are readable by the shop, but only trusted/admin tooling
+    // should write them. For this assignment, add products from the
+    // Firebase Console and leave client-side writes disabled.
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Each signed-in user can read/write only their own profile.
+    match /users/{userId} {
+      allow read, create, update: if request.auth != null
+        && request.auth.uid == userId;
+
+      allow delete: if request.auth != null
+        && request.auth.uid == userId;
+
+      match /cart/{cartItemId} {
+        allow read, create, update, delete: if request.auth != null
+          && request.auth.uid == userId;
+      }
+    }
+  }
+}

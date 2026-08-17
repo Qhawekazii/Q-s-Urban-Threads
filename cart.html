@@ -3,44 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Cart | Q's Urban Threads</title>
-
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
+<header>
+    <nav class="navbar">
+        <a href="./index.html" class="logo">Q's URBAN THREADS</a>
+        <div class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./shop.html">Shop</a>
+            <a href="./cart.html">Cart <span id="cart-count">0</span></a>
+            <span id="user-area"><a href="./login.html">Login</a></span>
+        </div>
+    </nav>
+</header>
 
-    <header>
-        <nav class="navbar">
+<main class="cart-page">
+    <section class="shop-header">
+        <p class="eyebrow">YOUR BAG</p>
+        <h1>Shopping Cart</h1>
+        <p id="cart-message" class="status-message" aria-live="polite">Checking your account...</p>
+    </section>
 
-            <a href="index.html" class="logo">
-                Q's URBAN THREADS
-            </a>
+    <div id="cart-content" class="cart-layout"></div>
+</main>
 
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="login.html">Login</a>
-                <a href="cart.html">Cart</a>
-            </div>
-
-        </nav>
-    </header>
-
-    <main>
-
-        <section class="categories">
-
-            <h1>Your Cart</h1>
-
-            <p>
-                Your shopping cart will appear here.
-            </p>
-
-        </section>
-
-    </main>
-
+<footer><p>&copy; 2026 Q's URBAN THREADS. All rights reserved.</p></footer>
+<script type="module" src="./js/cart.js"></script>
 </body>
 </html>

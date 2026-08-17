@@ -3,97 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Q's URBAN THREADS | Streetwear</title>
-
-    <link rel="stylesheet" href="css/style.css">
+    <title>Q's Urban Threads | Streetwear</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
+<header>
+    <nav class="navbar">
+        <a href="./index.html" class="logo">Q's URBAN THREADS</a>
+        <div class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./shop.html">Shop</a>
+            <a href="./cart.html">Cart <span id="cart-count">0</span></a>
+            <span id="user-area"><a href="./login.html">Login</a></span>
+        </div>
+    </nav>
+</header>
 
-    <header>
-        <nav class="navbar">
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">EVERYDAY STREETWEAR</p>
+            <h1>Wear Your<br><span>Own Way.</span></h1>
+            <p>Modern streetwear designed for people who move differently.</p>
+            <a href="./shop.html" class="btn">Shop Collection</a>
+        </div>
+    </section>
 
-            <a href="index.html" class="logo">
-                Q's URBAN THREADS
-            </a>
+    <section class="categories">
+        <h2>Shop By Category</h2>
+        <div class="category-grid">
+            <a href="./shop.html?category=Hoodies" class="category-card"><h3>Hoodies</h3><p>Oversized. Comfortable. Essential.</p></a>
+            <a href="./shop.html?category=T-Shirts" class="category-card"><h3>T-Shirts</h3><p>Simple pieces. Strong statements.</p></a>
+            <a href="./shop.html?category= sneakers" class="category-card"><h3>Sneakers</h3><p>Step into your everyday.</p></a>
+            <a href="./shop.html?category=Accessories" class="category-card"><h3>Accessories</h3><p>Finish the look.</p></a>
+        </div>
+    </section>
+</main>
 
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="login.html">Login</a>
-                <a href="cart.html">Cart</a>
-            </div>
-
-        </nav>
-    </header>
-
-
-    <main>
-
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <p class="eyebrow">EVERYDAY STREETWEAR</p>
-
-                <h1>
-                    Wear Your<br>
-                    <span>Own Way.</span>
-                </h1>
-
-                <p>
-                    Modern streetwear designed for people
-                    who move differently.
-                </p>
-
-                <a href="shop.html" class="btn">
-                    Shop Collection
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <section class="categories">
-
-            <h2>Shop By Category</h2>
-
-            <div class="category-grid">
-
-                <a href="shop.html" class="category-card">
-                    <h3>Hoodies</h3>
-                    <p>Oversized. Comfortable. Essential.</p>
-                </a>
-
-                <a href="shop.html" class="category-card">
-                    <h3>T-Shirts</h3>
-                    <p>Simple pieces. Strong statements.</p>
-                </a>
-
-                <a href="shop.html" class="category-card">
-                    <h3>Sneakers</h3>
-                    <p>Step into your everyday.</p>
-                </a>
-
-                <a href="shop.html" class="category-card">
-                    <h3>Accessories</h3>
-                    <p>Finish the look.</p>
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-        <p>&copy; 2026 Q's URBAN THREADS. All rights reserved.</p>
-    </footer>
-
-    <script type="module" src="js/main.js"></script>
-
+<footer><p>&copy; 2026 Q's URBAN THREADS. All rights reserved.</p></footer>
+<script type="module" src="./js/main.js"></script>
 </body>
 </html>
