@@ -2,6 +2,27 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    function validUserProfile(userId) {
+      return request.resource.data.keys().hasOnly(['uid', 'name', 'email', 'createdAt'])
+        && request.resource.data.uid == userId
+        && request.resource.data.name is string
+        && request.resource.data.email is string;
+    }
+
+    function validCartItem(cartItemId) {
+      return request.resource.data.keys().hasOnly(['productId', 'name', 'price', 'imageURL', 'quantity'])
+        && request.resource.data.productId == cartItemId
+        && request.resource.data.name is string
+        && request.resource.data.price is number
+        && request.resource.data.imageURL is string
+        && request.resource.data.quantity is int
+        && request.resource.data.quantity > 0
+        && request.resource.data.quantity <= 99;
+    }
 
     // Products are readable by the shop, but only trusted/admin tooling
     // should write them. For this assignment, add products from the
@@ -13,15 +34,18 @@ service cloud.firestore {
 
     // Each signed-in user can read/write only their own profile.
     match /users/{userId} {
-      allow read, create, update: if request.auth != null
-        && request.auth.uid == userId;
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && validUserProfile(userId);
+      allow update: if isOwner(userId)
+        && validUserProfile(userId)
+        && resource.data.uid == request.resource.data.uid;
 
-      allow delete: if request.auth != null
-        && request.auth.uid == userId;
+      allow delete: if isOwner(userId);
 
       match /cart/{cartItemId} {
-        allow read, create, update, delete: if request.auth != null
-          && request.auth.uid == userId;
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId) && validCartItem(cartItemId);
+        allow delete: if isOwner(userId);
       }
     }
   }

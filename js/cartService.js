@@ -35,8 +35,13 @@ async function setCartQuantity(uid, item, quantity) {
         return;
     }
 
+    const { id, ...cartItem } = item;
+
     await setDoc(ref, {
-        ...item,
+        ...cartItem,
+        productId: item.productId,
+        name: item.name,
+        imageURL: item.imageURL || "",
         price: Number(item.price || 0),
         quantity
     });
@@ -46,13 +51,15 @@ async function removeFromCart(uid, productId) {
     await deleteDoc(cartItemRef(uid, productId));
 }
 
-function listenToCart(uid, callback) {
+function listenToCart(uid, callback, errorCallback) {
     return onSnapshot(collection(db, "users", uid, "cart"), (snapshot) => {
         const items = snapshot.docs.map((document) => ({
             id: document.id,
             ...document.data()
         }));
         callback(items);
+    }, (error) => {
+        if (errorCallback) errorCallback(error);
     });
 }
 
