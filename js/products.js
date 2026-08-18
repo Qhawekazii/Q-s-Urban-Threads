@@ -1,6 +1,7 @@
 import {
     collection,
-    getDocs
+    getDocs,
+    addDoc
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
 import { db, auth } from "./firebaseConfig.js";
@@ -20,6 +21,149 @@ let currentUser = null;
 onAuthStateChanged(auth, (user) => {
     currentUser = user;
 });
+
+// Sample products data with different categories
+const sampleProducts = [
+    // T-Shirts
+    {
+        name: "Classic Urban Tee",
+        description: "Comfortable cotton blend t-shirt perfect for everyday wear",
+        price: 199.99,
+        category: "T-Shirts",
+        imageURL: "https://placehold.co/600x700?text=Urban+Tee"
+    },
+    {
+        name: "Street Style Graphic Tee",
+        description: "Bold graphic design with modern aesthetic",
+        price: 249.99,
+        category: "T-Shirts",
+        imageURL: "https://placehold.co/600x700?text=Graphic+Tee"
+    },
+    {
+        name: "Minimal Premium Shirt",
+        description: "Sleek minimalist design in premium fabric",
+        price: 279.99,
+        category: "T-Shirts",
+        imageURL: "https://placehold.co/600x700?text=Minimal+Shirt"
+    },
+    // Hoodies
+    {
+        name: "Oversized Streetwear Hoodie",
+        description: "Relaxed fit hoodie perfect for layering",
+        price: 449.99,
+        category: "Hoodies",
+        imageURL: "https://placehold.co/600x700?text=Oversized+Hoodie"
+    },
+    {
+        name: "Tech Fleece Hoodie",
+        description: "Advanced fleece technology for comfort and style",
+        price: 529.99,
+        category: "Hoodies",
+        imageURL: "https://placehold.co/600x700?text=Tech+Hoodie"
+    },
+    {
+        name: "Vintage Wash Hoodie",
+        description: "Retro styled hoodie with vintage wash effect",
+        price: 399.99,
+        category: "Hoodies",
+        imageURL: "https://placehold.co/600x700?text=Vintage+Hoodie"
+    },
+    // Jackets
+    {
+        name: "Urban Denim Jacket",
+        description: "Classic denim with modern urban cuts",
+        price: 699.99,
+        category: "Jackets",
+        imageURL: "https://placehold.co/600x700?text=Denim+Jacket"
+    },
+    {
+        name: "Bomber Jacket Pro",
+        description: "High-quality bomber jacket with premium materials",
+        price: 799.99,
+        category: "Jackets",
+        imageURL: "https://placehold.co/600x700?text=Bomber+Jacket"
+    },
+    {
+        name: "Windbreaker Essential",
+        description: "Lightweight and water-resistant windbreaker",
+        price: 549.99,
+        category: "Jackets",
+        imageURL: "https://placehold.co/600x700?text=Windbreaker"
+    },
+    // Pants
+    {
+        name: "Street Cargo Pants",
+        description: "Functional cargo pants with urban style",
+        price: 349.99,
+        category: "Pants",
+        imageURL: "https://placehold.co/600x700?text=Cargo+Pants"
+    },
+    {
+        name: "Slim Fit Jeans",
+        description: "Modern slim fit with authentic denim feel",
+        price: 299.99,
+        category: "Pants",
+        imageURL: "https://placehold.co/600x700?text=Slim+Jeans"
+    },
+    {
+        name: "Tapered Track Pants",
+        description: "Comfortable track pants with tapered leg",
+        price: 279.99,
+        category: "Pants",
+        imageURL: "https://placehold.co/600x700?text=Track+Pants"
+    },
+    // Accessories
+    {
+        name: "Street Snapback Cap",
+        description: "Classic snapback with embroidered logo",
+        price: 129.99,
+        category: "Accessories",
+        imageURL: "https://placehold.co/600x700?text=Snapback+Cap"
+    },
+    {
+        name: "Premium Canvas Belt",
+        description: "Durable canvas belt with metal buckle",
+        price: 159.99,
+        category: "Accessories",
+        imageURL: "https://placehold.co/600x700?text=Canvas+Belt"
+    },
+    {
+        name: "Crossbody Street Bag",
+        description: "Stylish crossbody bag for urban commuters",
+        price: 389.99,
+        category: "Accessories",
+        imageURL: "https://placehold.co/600x700?text=Crossbody+Bag"
+    },
+    {
+        name: "Urban Beanie",
+        description: "Comfortable wool blend beanie",
+        price: 99.99,
+        category: "Accessories",
+        imageURL: "https://placehold.co/600x700?text=Beanie"
+    }
+];
+
+// Function to seed products into Firestore
+async function seedProducts() {
+    const productsCollection = collection(db, "products");
+    
+    try {
+        console.log("Starting to seed products...");
+        for (const product of sampleProducts) {
+            await addDoc(productsCollection, product);
+            console.log(`Added: ${product.name}`);
+        }
+        console.log("All products seeded successfully!");
+        showToast("Products seeded successfully!", "success");
+        loadProducts();
+    } catch (error) {
+        console.error("Error seeding products:", error);
+        showToast("Error seeding products. Check console for details.", "error");
+    }
+}
+
+// Export seedProducts function for manual use (call seedProducts() in browser console if needed)
+window.seedProducts = seedProducts;
 
 async function loadProducts() {
     message.textContent = "Loading products...";
