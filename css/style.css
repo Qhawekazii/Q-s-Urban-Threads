@@ -719,7 +719,7 @@ button:disabled {
 
 .rating-stars {
     color: var(--brand);
-    font-size: 1.6rem;
+    font-size: 2rem;
     letter-spacing: 2px;
 }
 
