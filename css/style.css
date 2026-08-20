@@ -240,6 +240,7 @@ button:disabled {
 
 .btn:hover {
     background: #c92d61;
+    box-shadow: 0 0 22px rgba(232, 62, 117, 0.55);
     transform: translateY(-2px);
 }
 
@@ -310,7 +311,7 @@ button:disabled {
     transform: translateY(-7px);
     background: #fff0f5;
     border-color: var(--brand);
-    box-shadow: 0 20px 40px rgba(232, 62, 117, 0.2);
+    box-shadow: 0 20px 40px rgba(232, 62, 117, 0.2), 0 0 24px rgba(232, 62, 117, 0.35);
 }
 
 .category-card:active {
@@ -379,7 +380,7 @@ button:disabled {
     transform: translateY(-7px);
     background: #fff0f5;
     border-color: var(--brand);
-    box-shadow: 0 20px 40px rgba(232, 62, 117, 0.2);
+    box-shadow: 0 20px 40px rgba(232, 62, 117, 0.2), 0 0 24px rgba(232, 62, 117, 0.35);
 }
 
 .product-card:active {

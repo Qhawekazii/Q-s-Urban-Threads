@@ -1,7 +1,6 @@
 import {
     collection,
-    getDocs,
-    addDoc
+    getDocs
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
 import { db, auth } from "./firebaseConfig.js";
@@ -52,7 +51,7 @@ const sampleProducts = [
         description: "Relaxed fit hoodie perfect for layering",
         price: 449.99,
         category: "Hoodies",
-        imageURL: "https://placehold.co/600x700?text=Oversized+Hoodiehttps://img.kwcdn.com/product/fancy/c91c924f-a57e-45c1-b4e6-26c7bea7813f.jpg?imageView2/2/w/800/q/70/format/avif"
+        imageURL: "https://placehold.co/600x700?text=Oversized+Hoodie"
     },
     {
         name: "Tech Fleece Hoodie",
@@ -110,7 +109,7 @@ const sampleProducts = [
         description: "Comfortable track pants with tapered leg",
         price: 279.99,
         category: "Pants",
-        imageURL: "https://placehold.co/600x700?text=Track+Pantshttps://img.kwcdn.com/product/fancy/82c25edc-ff3e-4398-b33d-1213c53790bb.jpg?imageView2/2/w/800/q/70/format/avif"
+        imageURL: "https://placehold.co/600x700?text=Track+Pants"
     },
     // Accessories
     {
@@ -142,28 +141,6 @@ const sampleProducts = [
         imageURL: "https://placehold.co/600x700?text=Beanie"
     }
 ];
-
-// Function to seed products into Firestore
-async function seedProducts() {
-    const productsCollection = collection(db, "products");
-    
-    try {
-        console.log("Starting to seed products...");
-        for (const product of sampleProducts) {
-            await addDoc(productsCollection, product);
-            console.log(`Added: ${product.name}`);
-        }
-        console.log("All products seeded successfully!");
-        showToast("Products seeded successfully!", "success");
-        loadProducts();
-    } catch (error) {
-        console.error("Error seeding products:", error);
-        showToast("Error seeding products. Check console for details.", "error");
-    }
-}
-
-// Export seedProducts function for manual use (call seedProducts() in browser console if needed)
-window.seedProducts = seedProducts;
 
 async function loadProducts() {
     message.textContent = "Loading products...";
