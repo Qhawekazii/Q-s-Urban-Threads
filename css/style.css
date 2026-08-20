@@ -678,6 +678,10 @@ button:disabled {
     color: #fffafd;
 }
 
+:root[data-theme="dark"] .site-footer {
+    background: #7d1d49;
+}
+
 .footer-inner {
     display: grid;
     grid-template-columns: minmax(220px, 1fr) 2.5fr;
@@ -710,12 +714,12 @@ button:disabled {
     gap: 4px;
     margin-top: 24px;
     color: #fffafd;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 }
 
 .rating-stars {
     color: var(--brand);
-    font-size: 1.1rem;
+    font-size: 1.35rem;
     letter-spacing: 2px;
 }
 
@@ -742,6 +746,30 @@ button:disabled {
 .legal-links a:hover,
 .footer-column a:hover {
     color: var(--brand);
+}
+
+.social-links a::before,
+.app-column .app-link::before {
+    display: inline-block;
+    margin-right: 8px;
+    color: var(--brand);
+    font-weight: 700;
+}
+
+.social-links a:nth-child(1)::before {
+    content: "◎";
+}
+
+.social-links a:nth-child(2)::before {
+    content: "♫";
+}
+
+.social-links a:nth-child(3)::before {
+    content: "f";
+}
+
+.social-links a:nth-child(4)::before {
+    content: "✦";
 }
 
 .footer-columns {
@@ -776,11 +804,37 @@ button:disabled {
     background: #351b28;
 }
 
+.app-column .app-link:nth-of-type(1)::before {
+    content: "●";
+}
+
+.app-column .app-link:nth-of-type(2)::before {
+    content: "▶";
+}
+
+.app-column .app-link:nth-of-type(3)::before {
+    content: "H";
+}
+
+:root[data-theme="dark"] .app-column .app-link {
+    border-color: #b64b79;
+    background: #5e1738;
+}
+
+:root[data-theme="dark"] .app-column .app-link:hover {
+    border-color: #ffabc7;
+    background: #8f2454;
+}
+
 .footer-meta {
     max-width: 1400px;
     margin: 56px auto 0;
     padding-top: 22px;
     border-top: 1px solid #3e2630;
+}
+
+:root[data-theme="dark"] .footer-meta {
+    border-top-color: #b64b79;
 }
 
 .payment-methods {
