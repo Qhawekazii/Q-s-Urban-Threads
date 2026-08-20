@@ -91,8 +91,9 @@ button:disabled {
 }
 
 .logo {
-    font-size: 1.3rem;
-    font-weight: 800;
+    font-family: "Pacifico", cursive;
+    font-size: 1.5rem;
+    font-weight: 700;
     letter-spacing: 0;
     text-transform: uppercase;
 }
@@ -106,7 +107,7 @@ button:disabled {
 
 .nav-links a,
 .nav-button {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
@@ -144,6 +145,7 @@ button:disabled {
     width: 38px;
     height: 38px;
     padding: 0;
+    border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -154,6 +156,23 @@ button:disabled {
 .welcome-user {
     font-size: 0.9rem;
     font-weight: 600;
+    color: var(--brand-2);
+}
+
+#logout-btn {
+    padding: 9px 16px;
+    border: 1px solid var(--brand);
+    border-radius: 999px;
+    background: var(--brand);
+    color: white;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+#logout-btn:hover {
+    border-color: #c92d61;
+    background: #c92d61;
+    color: white;
+    transform: translateY(-2px);
 }
 
 #cart-count {

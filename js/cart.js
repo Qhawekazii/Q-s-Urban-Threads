@@ -89,8 +89,6 @@ function renderCart(uid, items) {
             <div class="summary-row"><span>Subtotal</span><span>R${subtotal.toFixed(2)}</span></div>
             <div class="summary-row"><span>Delivery</span><span>Calculated at checkout</span></div>
             <div class="summary-row total-row"><span>Total</span><strong>R${total.toFixed(2)}</strong></div>
-            <button class="btn btn-dark checkout-btn" type="button" id="checkout-btn">Checkout</button>
-            <p class="checkout-note">Demo checkout for this assignment.</p>
         </aside>
     `;
 
@@ -130,9 +128,6 @@ function renderCart(uid, items) {
         });
     });
 
-    document.getElementById("checkout-btn")?.addEventListener("click", () => {
-        showToast("Checkout is protected and ready for payment integration.", "info");
-    });
 }
 
 function escapeHtml(value) {
