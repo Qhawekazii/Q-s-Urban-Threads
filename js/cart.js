@@ -70,14 +70,14 @@ function renderCart(uid, items) {
                         <h2>${escapeHtml(item.name)}</h2>
                         <p>R${Number(item.price || 0).toFixed(2)} each</p>
                         <div class="quantity-controls">
-                            <button class="quantity-btn" data-action="decrease" data-id="${escapeHtml(item.productId)}">−</button>
+                            <button class="quantity-btn" type="button" aria-label="Decrease quantity of ${escapeHtml(item.name)}" data-action="decrease" data-id="${escapeHtml(item.productId)}">−</button>
                             <span>${item.quantity}</span>
-                            <button class="quantity-btn" data-action="increase" data-id="${escapeHtml(item.productId)}">+</button>
+                            <button class="quantity-btn" type="button" aria-label="Increase quantity of ${escapeHtml(item.name)}" data-action="increase" data-id="${escapeHtml(item.productId)}">+</button>
                         </div>
                     </div>
                     <div class="cart-item-total">
                         <strong>R${(Number(item.price || 0) * Number(item.quantity || 0)).toFixed(2)}</strong>
-                        <button class="remove-btn" data-id="${escapeHtml(item.productId)}">Remove</button>
+                        <button class="remove-btn" type="button" aria-label="Remove ${escapeHtml(item.name)} from cart" data-id="${escapeHtml(item.productId)}">Remove</button>
                     </div>
                 </article>
             `).join("")}
