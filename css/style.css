@@ -714,12 +714,12 @@ button:disabled {
     gap: 4px;
     margin-top: 24px;
     color: #fffafd;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
 }
 
 .rating-stars {
     color: var(--brand);
-    font-size: 1.35rem;
+    font-size: 1.6rem;
     letter-spacing: 2px;
 }
 
