@@ -5,13 +5,13 @@
 }
 
 :root {
-    --bg: #f4f1e8;
-    --panel: #fffdf8;
+    --bg: #fff1f5;
+    --panel: #fffafd;
     --text: #111111;
-    --muted: #5f5a52;
-    --border: #d8d1c2;
-    --brand: #d93f21;
-    --brand-2: #0f766e;
+    --muted: #6f5861;
+    --border: #f0c8d5;
+    --brand: #e83e75;
+    --brand-2: #b4235d;
     --ink: #111111;
     --shadow: 0 18px 45px rgba(17, 17, 17, 0.08);
 }
@@ -199,8 +199,8 @@ button:disabled {
     display: inline-block;
     padding: 14px 24px;
     border: 0;
-    background: white;
-    color: #111;
+    background: var(--brand);
+    color: white;
     font-weight: 700;
     cursor: pointer;
     text-align: center;
@@ -208,13 +208,14 @@ button:disabled {
 }
 
 .btn:hover {
-    background: #e8e0cf;
+    background: #c92d61;
+    transform: translateY(-2px);
 }
 
 .btn-dark {
-    background: var(--text);
-    border: 1px solid var(--text);
-    color: var(--bg);
+    background: var(--brand);
+    border: 1px solid var(--brand);
+    color: white;
 }
 
 :root[data-theme="dark"] .btn-dark {
@@ -224,7 +225,8 @@ button:disabled {
 }
 
 .btn-dark:hover {
-    background: var(--brand);
+    background: #c92d61;
+    border-color: #c92d61;
     color: white;
 }
 
@@ -252,7 +254,7 @@ button:disabled {
     border: 1px solid var(--border);
     border-radius: 8px;
     box-shadow: var(--shadow);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .category-card img {
@@ -274,7 +276,15 @@ button:disabled {
 }
 
 .category-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-7px);
+    background: #fff0f5;
+    border-color: var(--brand);
+    box-shadow: 0 20px 40px rgba(232, 62, 117, 0.2);
+}
+
+.category-card:active,
+.category-card:active {
+    transform: translateY(-10px) scale(0.99);
 }
 
 .shop-page,
@@ -332,6 +342,18 @@ button:disabled {
     border: 1px solid var(--border);
     border-radius: 8px;
     box-shadow: var(--shadow);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    background: #fff0f5;
+    border-color: var(--brand);
+    box-shadow: 0 20px 40px rgba(232, 62, 117, 0.2);
+}
+
+.product-card:active {
+    transform: translateY(-10px) scale(0.99);
 }
 
 .product-card img {
