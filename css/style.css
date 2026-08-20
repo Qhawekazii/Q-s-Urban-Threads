@@ -282,7 +282,6 @@ button:disabled {
     box-shadow: 0 20px 40px rgba(232, 62, 117, 0.2);
 }
 
-.category-card:active,
 .category-card:active {
     transform: translateY(-10px) scale(0.99);
 }
