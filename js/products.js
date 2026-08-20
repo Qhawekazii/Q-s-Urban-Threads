@@ -52,7 +52,7 @@ const sampleProducts = [
         description: "Relaxed fit hoodie perfect for layering",
         price: 449.99,
         category: "Hoodies",
-        imageURL: "https://placehold.co/600x700?text=Oversized+Hoodie"
+        imageURL: "https://placehold.co/600x700?text=Oversized+Hoodiehttps://img.kwcdn.com/product/fancy/c91c924f-a57e-45c1-b4e6-26c7bea7813f.jpg?imageView2/2/w/800/q/70/format/avif"
     },
     {
         name: "Tech Fleece Hoodie",
@@ -110,7 +110,7 @@ const sampleProducts = [
         description: "Comfortable track pants with tapered leg",
         price: 279.99,
         category: "Pants",
-        imageURL: "https://placehold.co/600x700?text=Track+Pants"
+        imageURL: "https://placehold.co/600x700?text=Track+Pantshttps://img.kwcdn.com/product/fancy/82c25edc-ff3e-4398-b33d-1213c53790bb.jpg?imageView2/2/w/800/q/70/format/avif"
     },
     // Accessories
     {
