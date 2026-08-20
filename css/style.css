@@ -129,8 +129,14 @@ button:disabled {
 }
 
 .icon-button {
-    min-height: 36px;
-    padding: 0 12px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1;
 }
 
 .welcome-user {
@@ -238,8 +244,7 @@ button:disabled {
 }
 
 .category-card {
-    min-height: 220px;
-    padding: 30px;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -250,12 +255,21 @@ button:disabled {
     transition: transform 0.2s ease;
 }
 
+.category-card img {
+    width: 100%;
+    height: clamp(180px, 18vw, 240px);
+    object-fit: cover;
+    display: block;
+}
+
 .category-card h3 {
     font-size: 1.5rem;
+    padding: 24px 24px 0;
     margin-bottom: 10px;
 }
 
 .category-card p {
+    padding: 0 24px 24px;
     color: var(--muted);
 }
 

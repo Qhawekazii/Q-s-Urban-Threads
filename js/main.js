@@ -21,8 +21,11 @@ function initTheme() {
 
 function updateThemeButton(theme) {
     if (!themeToggle) return;
-    themeToggle.textContent = theme === "dark" ? "Light" : "Dark";
-    themeToggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    const label = `Switch to ${nextTheme} mode`;
+    themeToggle.textContent = theme === "dark" ? "☀" : "☾";
+    themeToggle.setAttribute("aria-label", label);
+    themeToggle.setAttribute("title", label);
 }
 
 themeToggle?.addEventListener("click", () => {
