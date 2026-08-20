@@ -730,6 +730,12 @@ button:disabled {
     gap: 14px 18px;
 }
 
+.social-links,
+.app-column,
+.payment-methods {
+    display: none;
+}
+
 .social-links {
     margin-top: 24px;
 }
@@ -774,7 +780,7 @@ button:disabled {
 
 .footer-columns {
     display: grid;
-    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
     gap: 28px;
 }
 
